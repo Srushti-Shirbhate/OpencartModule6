@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<Results version="1.0">
+<ReportNode type="testrun">
+<ReportNode type="Context">
+<ReportNode type="Step">
+<Data>
+    <Name>Error in library file.</Name>
+    <ErrorText>Error in library file.</ErrorText>
+    <Description>&lt;BR/&gt;File: C:\Users\sfjbs\Documents\KeywordDrivenFramework\FunctionalLibraries\Library1.qfl&lt;BR/&gt;line (20): &amp;quot;-	Browser(&amp;quot;HP LP3065&amp;quot;).Page(&amp;quot;HP LP3065&amp;quot;).WebButton(&amp;quot;Continue_3&amp;quot;).Click&amp;quot;.&lt;BR/&gt;Description: Expected statement</Description>
+    <StartTime>2022-04-05 10:03:48</StartTime>
+    <Result>Failed</Result>
+    <Extension>
+      <TestObject>
+        <Repository>Local</Repository>
+        <Path>
+          <Object>
+            <Type>Browser</Type>
+            <Name><![CDATA[HP LP3065]]></Name>
+          </Object>
+        </Path>
+        <OperationData><![CDATA[<BR/>File: C:\Users\sfjbs\Documents\KeywordDrivenFramework\FunctionalLibraries\Library1.qfl<BR/>line (20): &quot;-	Browser(&quot;HP LP3065&quot;).Page(&quot;HP LP3065&quot;).WebButton(&quot;Continue_3&quot;).Click&quot;.<BR/>Description: Expected statement]]></OperationData>
+      </TestObject>
+      <IconKey>52ad0a109f814de69d7a425822817905</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+      <MergeIsErrorIcon>True</MergeIsErrorIcon>
+    </Extension>
+    <Snapshot reference="Resources\Snapshots\495aaef4-661e-4b99-b8c3-cd3e04575ff5.jpeg" highlight="0,0,1920,1032" />
+    <DeviceInfo />
+  </Data>
+</ReportNode>
+<Data>
+    <Name>HP LP3065</Name>
+    <Description>&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;span style="text-align : left; font-size : 12px; "&gt;Local Browser&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</Description>
+    <StartTime>2022-04-05 10:03:48</StartTime>
+    <Duration>9</Duration>
+    <Result>Failed</Result>
+    <Extension>
+      <TestObject>
+        <Repository>Local</Repository>
+        <Path>
+          <Object>
+            <Type>Browser</Type>
+            <Name><![CDATA[HP LP3065]]></Name>
+          </Object>
+        </Path>
+        <OperationData><![CDATA[<table><tr><td><span style="text-align : left; font-size : 12px; ">Local Browser</span></td></tr></table>]]></OperationData>
+      </TestObject>
+      <IconKey>cafc7c2eada3459d862dbbe54fc54631</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+  </Data>
+</ReportNode>
+<ReportNode type="Step">
+<Data>
+    <Name>Run Error</Name>
+    <Description>General run error.</Description>
+    <StartTime>2022-04-05 10:03:57</StartTime>
+    <Result>Failed</Result>
+    <Extension>
+      <IconKey>49a8ebf06af14b30a1371efbbfb03f9a</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+    <Snapshot reference="Resources\Snapshots\638bd153-b8a9-4980-a653-607da362bdc5.jpeg" />
+  </Data>
+</ReportNode>
+<Data>
+    <Name>GUITest3</Name>
+    <ToolName>Micro Focus UFT One</ToolName>
+    <ToolVersion>2021</ToolVersion>
+    <ToolVersionStringLiteral>2021</ToolVersionStringLiteral>
+    <Description />
+    <StartTime>2022-04-05 10:03:29</StartTime>
+    <Duration>28</Duration>
+    <Result>Failed</Result>
+    <InputParameters />
+    <Extension>
+      <IconKey>dda43b7bc0c74cfeb8745cfd5076d1ff</IconKey>
+      <IsPlainTextNodeName>True</IsPlainTextNodeName>
+    </Extension>
+    <Environment>
+      <Timezone>00:00:00</Timezone>
+      <Locale>English (United States)</Locale>
+      <User>sfjbs</User>
+      <CpuInfo>Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz</CpuInfo>
+      <NumberOfCores>2</NumberOfCores>
+      <TotalMemory>8191</TotalMemory>
+      <HostName>vm001</HostName>
+      <OSInfo>Windows 10 20H2 (x64)</OSInfo>
+    </Environment>
+    <TestedApplications />
+    <Links>
+      <Link type="DataTable" reference="Default.xlsx" displayname="Default Data Table" />
+    </Links>
+  </Data>
+</ReportNode>
+<GeneralInfo>
+    <ResultName>Res8</ResultName>
+    <RunStartTime>2022-04-05 10:03:29</RunStartTime>
+    <Timezone>00:00:00</Timezone>
+    <OrchestrationToolName>Micro Focus UFT One</OrchestrationToolName>
+    <OrchestrationToolVersion>2021</OrchestrationToolVersion>
+    <OrchestrationToolVersionStringLiteral>2021</OrchestrationToolVersionStringLiteral>
+  </GeneralInfo>
+</Results>

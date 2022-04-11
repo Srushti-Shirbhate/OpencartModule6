@@ -1,0 +1,162 @@
+﻿Function OpenURL()
+systemutil.Run(Environment("ENVIRONMENT_MOD6"))
+End Function
+
+Function AddtoCart()
+'	Browser("HP LP3065").Page("HP LP3065").Link("Laptops & Notebooks").Click
+'	Browser("HP LP3065").Page("HP LP3065").Link("Show All Laptops & Notebooks").Click
+'	Browser("HP LP3065").Page("HP LP3065").WebElement("Add to Cart").Check CheckPoint("Add to Cart")
+'	Browser("HP LP3065").Page("HP LP3065").WebButton("Add to Cart").Click
+'       Browser("HP LP3065").Page("HP LP3065").WebButton("Add to Cart_2").Click
+
+' Dim Browser1,Page1,Link1
+'	Set Browser1=Description.Create
+'	Set Page1=Description.Create
+'	Set Link1=Description.Create
+'
+'	Browser1("height").value="1044"
+'
+'	Page1("height").value="914"
+'
+'	Link1("abs_x").value="381"
+'
+'   	Browser(Browser1).Page(Page1).Link(Link1).Click
+
+	Browser("HP LP3065").Page("HP LP3065").Link("Laptops & Notebooks").Click
+	Browser("HP LP3065").Page("HP LP3065").Link("Show All Laptops & Notebooks").Click
+	Browser("HP LP3065").Page("HP LP3065").WebButton("Add to Cart").Click
+	'Browser("HP LP3065").Page("HP LP3065").WebButton("Add to Cart").Click
+	Browser("HP LP3065").Page("HP LP3065").WebButton("Add to Cart_2").Click
+
+   If Browser("HP LP3065").Exist(10) Then
+    Reporter.ReportEvent micPass, "AddtoCart", "AddtoCart successful"
+    else
+    Reporter.ReportEvent micFail, "AddtoCart", "AddtoCart unsuccessful"
+    End If
+End Function
+
+Function Checkout()
+      Browser("HP LP3065").Page("HP LP3065").Link("Checkout").Check CheckPoint("Checkout_2")
+      Browser("name:=HP LP3065","abs_x:=-12").Page("title:=HP LP3065").Link("text:=Checkout","height:=19").Click
+	   
+    If Browser("HP LP3065").Exist(10) Then
+    Reporter.ReportEvent micPass, "Checkout", "Checkout successful"
+    else
+    Reporter.ReportEvent micFail, "Checkout", "Checkout unsuccessful"
+    End If
+End Function
+
+Function GuestCheckout()
+        wait 1
+    Browser("HP LP3065").Page("HP LP3065").WebRadioGroup("account").Select "guest"
+    'Browser("HP LP3065").Page("HP LP3065").WebRadioGroup("account").Select "guest"
+    Browser("HP LP3065").Page("HP LP3065").WebButton("Continue").WaitProperty "abs_x", True, 30000
+     Value=Browser("HP LP3065").Page("HP LP3065").WebButton("Continue").GetROProperty("name")
+     msgbox value
+     Browser("HP LP3065").Page("HP LP3065").WebButton("Continue").Click
+    
+    If Browser("HP LP3065").Exist(10) Then
+    Reporter.ReportEvent micPass, "GuestCheckout", "GuestCheckout successful"
+    else
+    Reporter.ReportEvent micFail, "GuestCheckout", "GuestCheckout unsuccessful"
+    End If
+End Function
+
+Function BillingDetails(FName,LName,Email,Telephone,Address,Company,City,PostCode)
+    Browser("HP LP3065").Page("HP LP3065").WebEdit("firstname").Set FName
+    Browser("HP LP3065").Page("HP LP3065").WebEdit("lastname").Set LName
+    Browser("HP LP3065").Page("HP LP3065").WebEdit("email").Set Email
+    Browser("HP LP3065").Page("HP LP3065").WebEdit("telephone").Set Telephone
+    Browser("HP LP3065").Page("HP LP3065").WebEdit("address_1").Set Address
+    Browser("HP LP3065").Page("HP LP3065").WebEdit("company").Set Company
+    Browser("HP LP3065").Page("HP LP3065").WebEdit("city").Set City
+    Browser("HP LP3065").Page("HP LP3065").WebEdit("postcode").Set PostCode
+    Browser("HP LP3065").Page("HP LP3065").WebList("country_id").Select "Tunisia"
+    wait 1
+    Browser("HP LP3065").Page("HP LP3065").WebList("zone_id").Select "Monastir"
+    wait 1
+    Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_2").Click
+    
+    If Browser("HP LP3065").Page("HP LP3065").WebElement("E-Mail address does not").Exist(10) Then
+    	Browser("HP LP3065").Page("HP LP3065").Link("Step 1: Checkout Options").Click
+    	Browser("HP LP3065").Page("HP LP3065").WebRadioGroup("account").Select "guest"
+    	Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_6").Click
+Else
+ 	Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_2").Click
+
+ End If
+   
+   If Browser("HP LP3065").Exist(10) Then
+    Reporter.ReportEvent micPass, "BillingDetails", "BillingDetails successful"
+    else
+    Reporter.ReportEvent micFail, "BillingDetails", "BillingDetails unsuccessful"
+    End If
+End Function
+
+Function DeliveryMethod()
+   
+'      Dim Browser1,Page1,WebButton1
+'	Set Browser1=Description.Create
+'	Set Page1=Description.Create
+'	Set WebButton1=Description.Create
+'
+'	Browser1("name").value="HP LP3065"
+'
+'	Page1("title").value="HP LP3065"
+'
+'	WebButton1("type").value="button"
+
+ wait 1
+Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_3").Click
+    
+
+    If Browser("HP LP3065").Exist(10) Then
+    Reporter.ReportEvent micPass, "DeliveryMethod", "DeliveryMethod successful"
+    else
+    Reporter.ReportEvent micFail, "DeliveryMethod", "DeliveryMethod unsuccessful"
+    End If
+End Function
+
+Function PaymentMethod()
+
+'Dim Browser1,Page1,WebCheckBox1,WebButton1
+'Set Browser1=Description.Create
+'Set Page1=Description.Create
+'Set WebCheckBox1=Description.Create
+'Set WebButton1=Description.Create
+'
+'Browser1("name").value="HP LP3065"
+'
+'Page1("title").value="HP LP3065"
+'
+'WebCheckBox1("name").value="agree"
+'
+'WebButton1("type").value="button"
+'
+
+
+    wait 1
+    Browser("HP LP3065").Page("HP LP3065").WebCheckBox("agree").Set "ON"
+    wait 1
+    Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_4").Click
+    
+    If Browser("HP LP3065").Exist(10) Then
+    Reporter.ReportEvent micPass, "PaymentMethod", "PaymentMethod successful"
+    else
+    Reporter.ReportEvent micFail, "PaymentMethod", "PaymentMethod unsuccessful"
+    End If
+End Function
+
+Function ConfirmOrder()
+    Browser("HP LP3065").Page("HP LP3065").WebButton("Confirm Order").Click
+    Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_5").Click
+
+        If Browser("HP LP3065").Exist(10) Then
+    Reporter.ReportEvent micPass, "ConfirmOrder", "ConfirmOrder successful"
+    else
+    Reporter.ReportEvent micFail, "ConfirmOrder", "ConfirmOrder unsuccessful"
+    End If
+End Function
+
+
+

@@ -1,0 +1,30 @@
+﻿Function GuestCheckout()
+	'systemutil.Run("https://demo.opencart.com/index.php?route=product/product&product_id=47")
+	Browser("HP LP3065").Page("HP LP3065").Link("Checkout").Click
+	wait 5
+	Browser("HP LP3065").Page("HP LP3065").WebRadioGroup("account").Select "guest"
+	'Browser("HP LP3065").Page("HP LP3065").WebRadioGroup("account").Select "guest"
+	Browser("HP LP3065").Page("HP LP3065").WebButton("Continue").Click
+	Browser("HP LP3065").Page("HP LP3065").WebEdit("firstname").Set "Srushti"
+	Browser("HP LP3065").Page("HP LP3065").WebEdit("lastname").Set "Shirbhate"
+	Browser("HP LP3065").Page("HP LP3065").WebEdit("email").Set "srushti21@gmail.com"
+	Browser("HP LP3065").Page("HP LP3065").WebEdit("telephone").Set "9876543210"
+	Browser("HP LP3065").Page("HP LP3065").WebEdit("address_1").Set "Gopal nagar "
+	Browser("HP LP3065").Page("HP LP3065").WebEdit("company").Set "HP"
+	Browser("HP LP3065").Page("HP LP3065").WebEdit("city").Set "Amravati"
+	Browser("HP LP3065").Page("HP LP3065").WebEdit("postcode").Set "444607"
+	Browser("HP LP3065").Page("HP LP3065").WebList("country_id").Select "Tunisia"
+	wait 2
+	Browser("HP LP3065").Page("HP LP3065").WebList("zone_id").Select "Monastir"
+	wait 2
+	Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_2").Click
+	wait 3
+	Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_3").Click
+	wait 5
+	Browser("HP LP3065").Page("HP LP3065").WebCheckBox("agree").Set "ON"
+	wait 4
+	Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_4").Click
+	Browser("HP LP3065").Page("HP LP3065").WebButton("Confirm Order").Click
+	Browser("HP LP3065").Page("HP LP3065").WebButton("Continue_5").Click
+
+End Function
